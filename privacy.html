@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - Candor</title>
+    <link rel="icon" type="image/png" href="candor-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --green: #2E7D32;
+            --green-light: #4CAF50;
+            --bg: #060808;
+            --surface: rgba(255, 255, 255, 0.04);
+            --border: rgba(255, 255, 255, 0.06);
+            --border-light: rgba(255, 255, 255, 0.1);
+            --text: #f0f0f0;
+            --text-secondary: #8a8f98;
+            --text-muted: #5a5f68;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* ── Nav ── */
+        nav {
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background: rgba(6, 8, 8, 0.8);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-inner {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .nav-brand img {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+        }
+
+        .nav-brand span {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .nav-back {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-back:hover { color: var(--text); }
+
+        /* ── Content ── */
+        .policy-header {
+            padding: 60px 0 40px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 40px;
+        }
+
+        .policy-header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .policy-header .effective {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .policy-section {
+            margin-bottom: 36px;
+        }
+
+        .policy-section h2 {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--green-light);
+            margin-bottom: 12px;
+            letter-spacing: -0.2px;
+        }
+
+        .policy-section p {
+            font-size: 15px;
+            line-height: 1.75;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .policy-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ── Footer ── */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-brand img {
+            width: 20px;
+            height: 20px;
+            border-radius: 5px;
+            opacity: 0.5;
+        }
+
+        .footer-brand span {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .footer-links a {
+            font-size: 13px;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover { color: var(--text-secondary); }
+
+        @media (max-width: 640px) {
+            .policy-header { padding: 40px 0 30px; }
+            .policy-header h1 { font-size: 26px; }
+            .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">
+                <img src="candor-logo.png" alt="Candor">
+                <span>Candor</span>
+            </a>
+            <a href="/" class="nav-back">&larr; Back to Home</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="policy-header">
+            <h1>Privacy Policy</h1>
+            <p class="effective">Effective March 25, 2026</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>1. Introduction</h2>
+            <p>Candor, LLC ("Candor," "we," "us," or "our") operates the Candor mobile application (the "App"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our App. By creating an account or using the App, you consent to the practices described in this Privacy Policy.</p>
+            <p>We reserve the right to make changes to this Privacy Policy at any time. We will alert you about any changes by updating the "Effective Date." Your continued use of the App after changes constitutes your acceptance of those changes.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>2. Information We Collect</h2>
+            <p>When you create an account, we collect your email address, encrypted password, and optionally your display name and profile photo. Your profile photo is stored locally on your device only.</p>
+            <p>When you connect a bank account through Plaid, we process transaction data (dates, amounts, merchant names, categories), account names, institution names, and account balances. Candor never receives, processes, or stores your bank login credentials. We also never receive full account numbers or routing numbers.</p>
+            <p>Data you import via CSV is processed locally on your device and is never transmitted to our servers.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>3. How We Use Your Information</h2>
+            <p>We use your information to create and manage your account, authenticate your identity, display your spending data within the App, categorize transactions automatically, synchronize bank transactions via Plaid, send account-related communications, improve the App, detect and prevent security threats, and comply with legal obligations.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>4. Data Storage and Protection</h2>
+            <p>Candor uses a local-first architecture. Your financial data is stored on your device using Apple's SwiftData framework, encrypted at rest by iOS Data Protection. Our server stores only Plaid access tokens (encrypted) and sync cursors. We do not store your transaction data on our servers.</p>
+            <p>All data in transit is encrypted using TLS 1.2 or higher. Plaid access tokens on our server are encrypted at rest using AES-256.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>5. Third-Party Services</h2>
+            <p>We use Plaid to connect to your bank accounts and retrieve transaction data. Plaid's privacy policy is available at <a href="https://plaid.com/legal" style="color: var(--green-light); text-decoration: none;">plaid.com/legal</a>. We use Google Firebase for authentication. If you sign in with Apple, Apple facilitates that process under their own privacy policy.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>6. Data Sharing</h2>
+            <p>We do not sell, rent, lease, or trade your personal information or financial data to any third party for marketing, advertising, or any other commercial purpose. We share data only with Plaid (for bank connectivity) and Firebase (for authentication), as required by law, or with your explicit consent.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>7. Your Rights</h2>
+            <p>You can view all data within the App, disconnect bank accounts at any time, and delete your account from Settings. California residents have additional rights under the CCPA including the right to request disclosure and deletion of personal information. We do not sell personal information.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>8. Data Retention</h2>
+            <p>Transaction data on your device is retained as long as the App is installed. Plaid access tokens are deleted within 24 hours of disconnection. Server logs are retained for no more than 90 days. If you delete your account, all associated data is permanently removed within 30 days.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>9. Children's Privacy</h2>
+            <p>The App is not intended for use by individuals under 18. We do not knowingly collect personal information from children under 18.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>10. Security</h2>
+            <p>We implement commercially reasonable measures to protect your data, including encryption in transit and at rest, multi-factor authentication, biometric authentication (Face ID / Touch ID), iOS application sandboxing, and regular security reviews. No method of electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>11. Contact Us</h2>
+            <p>If you have questions about this Privacy Policy, contact us at:</p>
+            <p>Candor, LLC<br>Roeland Park, KS 66205<br>Email: <a href="mailto:privacy@candorapp.com" style="color: var(--green-light); text-decoration: none;">privacy@candorapp.com</a></p>
+        </div>
+
+        <footer>
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <img src="candor-logo.png" alt="Candor">
+                    <span>&copy; 2026 Candor, LLC</span>
+                </div>
+                <div class="footer-links">
+                    <a href="mailto:nick@candorfinance.app">Contact</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
