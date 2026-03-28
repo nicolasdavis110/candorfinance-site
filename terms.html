@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - Candor</title>
+    <link rel="icon" type="image/png" href="candor-logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --green: #2E7D32;
+            --green-light: #4CAF50;
+            --bg: #060808;
+            --surface: rgba(255, 255, 255, 0.04);
+            --border: rgba(255, 255, 255, 0.06);
+            --border-light: rgba(255, 255, 255, 0.1);
+            --text: #f0f0f0;
+            --text-secondary: #8a8f98;
+            --text-muted: #5a5f68;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* -- Nav -- */
+        nav {
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            background: rgba(6, 8, 8, 0.8);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-inner {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .nav-brand img {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+        }
+
+        .nav-brand span {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text);
+        }
+
+        .nav-back {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-back:hover { color: var(--text); }
+
+        /* -- Content -- */
+        .policy-header {
+            padding: 60px 0 40px;
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 40px;
+        }
+
+        .policy-header h1 {
+            font-size: 32px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .policy-header .effective {
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        .policy-section {
+            margin-bottom: 36px;
+        }
+
+        .policy-section h2 {
+            font-size: 17px;
+            font-weight: 600;
+            color: var(--green-light);
+            margin-bottom: 12px;
+            letter-spacing: -0.2px;
+        }
+
+        .policy-section p {
+            font-size: 15px;
+            line-height: 1.75;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .policy-section p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* -- Footer -- */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid var(--border);
+            margin-top: 40px;
+        }
+
+        .footer-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .footer-brand img {
+            width: 20px;
+            height: 20px;
+            border-radius: 5px;
+            opacity: 0.5;
+        }
+
+        .footer-brand span {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
+        }
+
+        .footer-links a {
+            font-size: 13px;
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .footer-links a:hover { color: var(--text-secondary); }
+
+        @media (max-width: 640px) {
+            .policy-header { padding: 40px 0 30px; }
+            .policy-header h1 { font-size: 26px; }
+            .footer-inner { flex-direction: column; gap: 16px; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-inner">
+            <a href="/" class="nav-brand">
+                <img src="candor-logo.png" alt="Candor">
+                <span>Candor</span>
+            </a>
+            <a href="/" class="nav-back">&larr; Back to Home</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="policy-header">
+            <h1>Terms of Service</h1>
+            <p class="effective">Effective March 25, 2026</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>1. Acceptance of Terms</h2>
+            <p>By downloading, installing, or using the Candor mobile application (the "App"), you agree to be bound by these Terms of Service ("Terms"). If you do not agree to these Terms, do not use the App. These Terms constitute a legally binding agreement between you and Candor, LLC ("Candor," "we," "us," or "our").</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>2. Eligibility</h2>
+            <p>You must be at least 18 years old to create an account and use the App. By using the App, you represent and warrant that you are at least 18 years of age and have the legal capacity to enter into these Terms.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>3. Account Registration</h2>
+            <p>To use the App, you must create an account with a valid email address and a secure password. You are responsible for maintaining the confidentiality of your login credentials and for all activity that occurs under your account. You agree to notify us immediately of any unauthorized use of your account.</p>
+            <p>We reserve the right to suspend or terminate accounts that violate these Terms or that we reasonably believe have been compromised.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>4. Description of Service</h2>
+            <p>Candor is a personal spending awareness tool. The App allows you to connect bank accounts via Plaid, view and categorize transactions, track spending trends, and import financial data via CSV. Candor is not a budgeting tool, financial advisor, or banking service.</p>
+            <p>The App is provided for informational and personal use only. Transaction data displayed in the App may not reflect real-time balances and should not be relied upon for financial decisions.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>5. Bank Connectivity</h2>
+            <p>Bank account connections are facilitated by Plaid Inc. By connecting a bank account, you authorize Plaid to access your financial data on your behalf and share it with Candor in accordance with Plaid's <a href="https://plaid.com/legal" style="color: var(--green-light); text-decoration: none;">privacy policy</a>. Candor never receives, stores, or has access to your bank login credentials.</p>
+            <p>We do not guarantee uninterrupted access to your bank data. Bank connections may be interrupted by your financial institution, Plaid, or network conditions.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>6. Subscriptions and Payments</h2>
+            <p>Candor offers a subscription service billed through Apple's App Store. By subscribing, you agree to pay the applicable fees as displayed at the time of purchase. Subscriptions automatically renew unless canceled at least 24 hours before the end of the current billing period.</p>
+            <p>You can manage your subscription and turn off auto-renewal in your Apple ID account settings. Refunds are handled by Apple in accordance with their refund policies. We do not process payments directly.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>7. Acceptable Use</h2>
+            <p>You agree not to: use the App for any unlawful purpose; attempt to gain unauthorized access to our systems or other users' accounts; reverse engineer, decompile, or disassemble the App; use automated systems or bots to access the App; transmit viruses or malicious code; or interfere with the App's operation or infrastructure.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>8. Intellectual Property</h2>
+            <p>The App, including its design, code, graphics, logos, and content, is owned by Candor, LLC and is protected by copyright, trademark, and other intellectual property laws. You are granted a limited, non-exclusive, non-transferable, revocable license to use the App for personal, non-commercial purposes.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>9. Disclaimer of Warranties</h2>
+            <p>The App is provided "as is" and "as available" without warranties of any kind, either express or implied. We do not warrant that the App will be uninterrupted, error-free, or free of harmful components. We make no guarantees about the accuracy, completeness, or timeliness of transaction data.</p>
+            <p>Candor is not a financial advisor, tax professional, or licensed broker. Nothing in the App constitutes financial, investment, tax, or legal advice.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>10. Limitation of Liability</h2>
+            <p>To the fullest extent permitted by law, Candor, LLC and its officers, directors, employees, and agents shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of or inability to use the App, including but not limited to loss of data, loss of profits, or financial losses based on information displayed in the App.</p>
+            <p>Our total liability to you for any claims arising from your use of the App shall not exceed the amount you paid to us in the twelve (12) months preceding the claim, or fifty dollars ($50), whichever is greater.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>11. Account Termination</h2>
+            <p>You may delete your account at any time from the Settings screen in the App. Upon deletion, your account data will be permanently removed within 30 days.</p>
+            <p>We reserve the right to suspend or terminate your account at any time if we believe you have violated these Terms, without prior notice or liability.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>12. Changes to Terms</h2>
+            <p>We may update these Terms from time to time. If we make material changes, we will notify you through the App or via the email address associated with your account. Your continued use of the App after changes take effect constitutes your acceptance of the revised Terms.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>13. Governing Law</h2>
+            <p>These Terms are governed by and construed in accordance with the laws of the State of Kansas, without regard to its conflict of law provisions. Any disputes arising under these Terms shall be resolved in the state or federal courts located in Johnson County, Kansas.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>14. Contact Us</h2>
+            <p>If you have questions about these Terms, contact us at:</p>
+            <p>Candor, LLC<br>Roeland Park, KS 66205<br>Email: <a href="mailto:nick@candorfinance.app" style="color: var(--green-light); text-decoration: none;">nick@candorfinance.app</a></p>
+        </div>
+
+        <footer>
+            <div class="footer-inner">
+                <div class="footer-brand">
+                    <img src="candor-logo.png" alt="Candor">
+                    <span>&copy; 2026 Candor, LLC</span>
+                </div>
+                <div class="footer-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <a href="mailto:nick@candorfinance.app">Contact</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
