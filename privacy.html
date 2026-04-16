@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Candor</title>
+    <title>Privacy Policy — Candor</title>
+    <meta name="theme-color" content="#5FAF87">
     <link rel="icon" type="image/png" href="candor-logo.png">
+    <link rel="apple-touch-icon" href="candor-logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -12,14 +14,15 @@
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --green: #2E7D32;
-            --green-light: #4CAF50;
-            --bg: #060808;
+            --green: #5FAF87;
+            --green-light: #7CC9A1;
+            --green-dark: #4A8F6E;
+            --bg: #0A0D11;
             --surface: rgba(255, 255, 255, 0.04);
             --border: rgba(255, 255, 255, 0.06);
             --border-light: rgba(255, 255, 255, 0.1);
-            --text: #f0f0f0;
-            --text-secondary: #8a8f98;
+            --text: #F4F7FB;
+            --text-secondary: #8994A3;
             --text-muted: #5a5f68;
         }
 
@@ -45,7 +48,7 @@
             z-index: 100;
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            background: rgba(6, 8, 8, 0.8);
+            background: rgba(10, 13, 17, 0.8);
             border-bottom: 1px solid var(--border);
         }
 
@@ -75,6 +78,7 @@
             font-size: 18px;
             font-weight: 700;
             color: var(--text);
+            letter-spacing: -0.3px;
         }
 
         .nav-back {
@@ -129,6 +133,15 @@
             margin-bottom: 0;
         }
 
+        .policy-section a {
+            color: var(--green-light);
+            text-decoration: none;
+        }
+
+        .policy-section a:hover {
+            text-decoration: underline;
+        }
+
         /* ── Footer ── */
         footer {
             padding: 40px 0;
@@ -158,6 +171,11 @@
         .footer-brand span {
             font-size: 13px;
             color: var(--text-muted);
+        }
+
+        .footer-links {
+            display: flex;
+            gap: 24px;
         }
 
         .footer-links a {
@@ -190,7 +208,7 @@
     <div class="container">
         <div class="policy-header">
             <h1>Privacy Policy</h1>
-            <p class="effective">Effective April 1, 2026</p>
+            <p class="effective">Effective April 16, 2026</p>
         </div>
 
         <div class="policy-section">
@@ -201,40 +219,43 @@
 
         <div class="policy-section">
             <h2>2. Information We Collect</h2>
-            <p>When you create an account, we collect your email address, encrypted password, and optionally your display name and profile photo. Your profile photo is stored locally on your device only.</p>
-            <p>When you connect a bank account through Plaid or Finicity (a Mastercard company), we process transaction data (dates, amounts, merchant names, categories), account names, institution names, and account balances. Candor never receives, processes, or stores your bank login credentials. We also never receive full account numbers or routing numbers.</p>
-            <p>Data you import via CSV is processed locally on your device and is never transmitted to our servers.</p>
+            <p>When you create an account, we collect your email address, encrypted password, and optionally your display name and profile photo.</p>
+            <p>When you connect a bank account through Plaid or Finicity (a Mastercard company), we process transaction data (dates, amounts, merchant names, categories), account names, institution names, and account balances. This data is stored both on your device and on our secure server so your spending history is always available. Candor never receives, processes, or stores your bank login credentials. We also never receive full account numbers or routing numbers.</p>
+            <p>Data you import via CSV is processed on your device and synced to our server.</p>
         </div>
 
         <div class="policy-section">
             <h2>3. How We Use Your Information</h2>
-            <p>We use your information to create and manage your account, authenticate your identity, display your spending data within the App, categorize transactions automatically, synchronize bank transactions via Plaid and Finicity, send account-related communications, improve the App, detect and prevent security threats, and comply with legal obligations.</p>
+            <p>We use your information to create and manage your account, authenticate your identity, display your spending data within the App, categorize transactions automatically, synchronize bank transactions via Plaid and Finicity, sync your data across sessions so it is never lost, send account-related communications, improve the App, detect and prevent security threats, and comply with legal obligations.</p>
         </div>
 
         <div class="policy-section">
             <h2>4. Data Storage and Protection</h2>
-            <p>Candor uses a local-first architecture. Your financial data is stored on your device using Apple's SwiftData framework, encrypted at rest by iOS Data Protection. Our server stores only Plaid and Finicity access tokens (encrypted) and sync cursors. We do not store your transaction data on our servers.</p>
-            <p>All data in transit is encrypted using TLS 1.2 or higher. Access tokens on our server are encrypted at rest using AES-256.</p>
+            <p>Your financial data is stored on your device using Apple's SwiftData framework, encrypted at rest by iOS Data Protection. It is also stored on our server (hosted on Railway) so your data persists across devices and is never lost. Server-side data is stored in a PostgreSQL database encrypted at rest using AES-256.</p>
+            <p>All data in transit is encrypted using TLS 1.2 or higher with certificate pinning to prevent interception. Plaid and Finicity access tokens on our server are encrypted using envelope encryption with AES-256-GCM before being stored in the database.</p>
         </div>
 
         <div class="policy-section">
             <h2>5. Third-Party Services</h2>
-            <p>We use Plaid and Finicity (a Mastercard company) to connect to your bank accounts and retrieve transaction data. Plaid's privacy policy is available at <a href="https://plaid.com/legal" style="color: var(--green-light); text-decoration: none;">plaid.com/legal</a>. Finicity's privacy policy is available at <a href="https://www.finicity.com/privacy/" style="color: var(--green-light); text-decoration: none;">finicity.com/privacy</a>. We use Google Firebase for authentication and Firebase Crashlytics to collect anonymous crash reports and basic device metadata (device model, OS version, app version) to help us diagnose and fix bugs. Crash data is not linked to your identity and is not used for advertising or tracking. If you sign in with Apple, Apple facilitates that process under their own privacy policy.</p>
+            <p>We use Plaid and Finicity (a Mastercard company) to connect to your bank accounts and retrieve transaction data. Plaid's privacy policy is available at <a href="https://plaid.com/legal">plaid.com/legal</a>. Finicity's privacy policy is available at <a href="https://www.finicity.com/privacy/">finicity.com/privacy</a>.</p>
+            <p>We use Google Firebase for authentication and Firebase Crashlytics to collect anonymous crash reports and basic device metadata (device model, OS version, app version) to help us diagnose and fix bugs. Crash data is not linked to your identity and is not used for advertising or tracking.</p>
+            <p>We use Betterstack for server audit log retention. Logs contain request metadata (endpoints, status codes, timestamps) but never contain your financial data or credentials.</p>
+            <p>If you sign in with Apple, Apple facilitates that process under their own privacy policy.</p>
         </div>
 
         <div class="policy-section">
             <h2>6. Data Sharing</h2>
-            <p>We do not sell, rent, lease, or trade your personal information or financial data to any third party for marketing, advertising, or any other commercial purpose. We share data only with Plaid and Finicity (for bank connectivity) and Firebase (for authentication), as required by law, or with your explicit consent.</p>
+            <p>We do not sell, rent, lease, or trade your personal information or financial data to any third party for marketing, advertising, or any other commercial purpose. We share data only with Plaid and Finicity (for bank connectivity), Firebase (for authentication and crash reporting), and Betterstack (for server audit logs), as required by law, or with your explicit consent.</p>
         </div>
 
         <div class="policy-section">
             <h2>7. Your Rights</h2>
-            <p>You can view all data within the App, export your transaction data via CSV, disconnect bank accounts at any time, and delete your account from Settings. Exported CSV files are generated locally on your device and are not transmitted to our servers. California residents have additional rights under the CCPA including the right to request disclosure and deletion of personal information. We do not sell personal information.</p>
+            <p>You can view all data within the App, export your transaction data via CSV, disconnect bank accounts at any time, and delete your account from Settings. When you delete your account, all server-side data is permanently removed. Exported CSV files are generated from your data and downloaded directly to your device. California residents have additional rights under the CCPA including the right to request disclosure and deletion of personal information. We do not sell personal information.</p>
         </div>
 
         <div class="policy-section">
             <h2>8. Data Retention</h2>
-            <p>Transaction data on your device is retained as long as the App is installed. Plaid and Finicity access tokens are deleted within 24 hours of disconnection. Server logs are retained for no more than 90 days. If you delete your account, all associated data is permanently removed within 30 days.</p>
+            <p>Transaction data is retained on our server as long as your account is active. Plaid and Finicity access tokens are deleted within 24 hours of disconnection. Server audit logs are retained for no more than 90 days. If you delete your account, all associated data — including transactions, categories, account records, and encrypted access tokens — is permanently removed within 30 days.</p>
         </div>
 
         <div class="policy-section">
@@ -244,13 +265,13 @@
 
         <div class="policy-section">
             <h2>10. Security</h2>
-            <p>We implement commercially reasonable measures to protect your data, including encryption in transit and at rest, multi-factor authentication, biometric authentication (Face ID / Touch ID), iOS application sandboxing, and regular security reviews. No method of electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
+            <p>We implement commercially reasonable measures to protect your data, including: encryption in transit (TLS 1.2+) and at rest (AES-256), certificate pinning on all server connections, envelope encryption for third-party access tokens, biometric authentication (Face ID / Touch ID), automatic session timeouts, structured audit logging with 90-day retention, server-side rate limiting, and regular security reviews. No method of electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
         </div>
 
         <div class="policy-section">
             <h2>11. Contact Us</h2>
             <p>If you have questions about this Privacy Policy, contact us at:</p>
-            <p>Candor, LLC<br>Roeland Park, KS 66205<br>Email: <a href="mailto:privacy@candorfinance.app" style="color: var(--green-light); text-decoration: none;">privacy@candorfinance.app</a></p>
+            <p>Candor, LLC<br>Roeland Park, KS 66205<br>Email: <a href="mailto:privacy@candorfinance.app">privacy@candorfinance.app</a></p>
         </div>
 
         <footer>

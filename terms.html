@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Terms of Service - Candor</title>
+    <title>Terms of Service — Candor</title>
+    <meta name="theme-color" content="#5FAF87">
     <link rel="icon" type="image/png" href="candor-logo.png">
+    <link rel="apple-touch-icon" href="candor-logo.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -12,14 +14,15 @@
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         :root {
-            --green: #2E7D32;
-            --green-light: #4CAF50;
-            --bg: #060808;
+            --green: #5FAF87;
+            --green-light: #7CC9A1;
+            --green-dark: #4A8F6E;
+            --bg: #0A0D11;
             --surface: rgba(255, 255, 255, 0.04);
             --border: rgba(255, 255, 255, 0.06);
             --border-light: rgba(255, 255, 255, 0.1);
-            --text: #f0f0f0;
-            --text-secondary: #8a8f98;
+            --text: #F4F7FB;
+            --text-secondary: #8994A3;
             --text-muted: #5a5f68;
         }
 
@@ -45,7 +48,7 @@
             z-index: 100;
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            background: rgba(6, 8, 8, 0.8);
+            background: rgba(10, 13, 17, 0.8);
             border-bottom: 1px solid var(--border);
         }
 
@@ -75,6 +78,7 @@
             font-size: 18px;
             font-weight: 700;
             color: var(--text);
+            letter-spacing: -0.3px;
         }
 
         .nav-back {
@@ -127,6 +131,15 @@
 
         .policy-section p:last-child {
             margin-bottom: 0;
+        }
+
+        .policy-section a {
+            color: var(--green-light);
+            text-decoration: none;
+        }
+
+        .policy-section a:hover {
+            text-decoration: underline;
         }
 
         /* -- Footer -- */
@@ -195,7 +208,7 @@
     <div class="container">
         <div class="policy-header">
             <h1>Terms of Service</h1>
-            <p class="effective">Effective April 1, 2026</p>
+            <p class="effective">Effective April 16, 2026</p>
         </div>
 
         <div class="policy-section">
@@ -216,7 +229,7 @@
 
         <div class="policy-section">
             <h2>4. Description of Service</h2>
-            <p>Candor is a personal spending awareness tool. The App allows you to connect bank accounts via Plaid or Finicity, view and categorize transactions, track spending trends, and import financial data via CSV. Candor is not a budgeting tool, financial advisor, or banking service.</p>
+            <p>Candor is a personal spending awareness tool. The App allows you to connect bank accounts via Plaid or Finicity, view and categorize transactions, track spending trends, and import financial data via CSV. Your data is stored on your device and securely synced to our server so it is never lost. Candor is not a budgeting tool, financial advisor, or banking service.</p>
             <p>The App is provided for informational and personal use only. Transaction data displayed in the App may not reflect real-time balances and should not be relied upon for financial decisions.</p>
         </div>
 
@@ -227,53 +240,58 @@
         </div>
 
         <div class="policy-section">
-            <h2>6. Subscriptions and Payments</h2>
+            <h2>6. Cloud Sync and Data Processing</h2>
+            <p>By using the App, you acknowledge that your transaction data, account information, and categories are transmitted to and stored on our server to provide cloud synchronization. All data is encrypted in transit using TLS 1.2 or higher and encrypted at rest on our server using AES-256. You may delete all server-side data at any time by deleting your account from Settings.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>7. Subscriptions and Payments</h2>
             <p>Candor offers a subscription service billed through Apple's App Store. By subscribing, you agree to pay the applicable fees as displayed at the time of purchase. Subscriptions automatically renew unless canceled at least 24 hours before the end of the current billing period.</p>
             <p>You can manage your subscription and turn off auto-renewal in your Apple ID account settings. Refunds are handled by Apple in accordance with their refund policies. We do not process payments directly.</p>
         </div>
 
         <div class="policy-section">
-            <h2>7. Acceptable Use</h2>
+            <h2>8. Acceptable Use</h2>
             <p>You agree not to: use the App for any unlawful purpose; attempt to gain unauthorized access to our systems or other users' accounts; reverse engineer, decompile, or disassemble the App; use automated systems or bots to access the App; transmit viruses or malicious code; or interfere with the App's operation or infrastructure.</p>
         </div>
 
         <div class="policy-section">
-            <h2>8. Intellectual Property</h2>
+            <h2>9. Intellectual Property</h2>
             <p>The App, including its design, code, graphics, logos, and content, is owned by Candor, LLC and is protected by copyright, trademark, and other intellectual property laws. You are granted a limited, non-exclusive, non-transferable, revocable license to use the App for personal, non-commercial purposes.</p>
         </div>
 
         <div class="policy-section">
-            <h2>9. Disclaimer of Warranties</h2>
+            <h2>10. Disclaimer of Warranties</h2>
             <p>The App is provided "as is" and "as available" without warranties of any kind, either express or implied. We do not warrant that the App will be uninterrupted, error-free, or free of harmful components. We make no guarantees about the accuracy, completeness, or timeliness of transaction data.</p>
             <p>Candor is not a financial advisor, tax professional, or licensed broker. Nothing in the App constitutes financial, investment, tax, or legal advice.</p>
         </div>
 
         <div class="policy-section">
-            <h2>10. Limitation of Liability</h2>
+            <h2>11. Limitation of Liability</h2>
             <p>To the fullest extent permitted by law, Candor, LLC and its officers, directors, employees, and agents shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of or inability to use the App, including but not limited to loss of data, loss of profits, or financial losses based on information displayed in the App.</p>
             <p>Our total liability to you for any claims arising from your use of the App shall not exceed the amount you paid to us in the twelve (12) months preceding the claim, or fifty dollars ($50), whichever is greater.</p>
         </div>
 
         <div class="policy-section">
-            <h2>11. Account Termination</h2>
-            <p>You may delete your account at any time from the Settings screen in the App. Upon deletion, your account data will be permanently removed within 30 days.</p>
+            <h2>12. Account Termination</h2>
+            <p>You may delete your account at any time from the Settings screen in the App. Upon deletion, all your data — including transactions, categories, account records, and encrypted access tokens — will be permanently removed from our server within 30 days.</p>
             <p>We reserve the right to suspend or terminate your account at any time if we believe you have violated these Terms, without prior notice or liability.</p>
         </div>
 
         <div class="policy-section">
-            <h2>12. Changes to Terms</h2>
+            <h2>13. Changes to Terms</h2>
             <p>We may update these Terms from time to time. If we make material changes, we will notify you through the App or via the email address associated with your account. Your continued use of the App after changes take effect constitutes your acceptance of the revised Terms.</p>
         </div>
 
         <div class="policy-section">
-            <h2>13. Governing Law</h2>
+            <h2>14. Governing Law</h2>
             <p>These Terms are governed by and construed in accordance with the laws of the State of Kansas, without regard to its conflict of law provisions. Any disputes arising under these Terms shall be resolved in the state or federal courts located in Johnson County, Kansas.</p>
         </div>
 
         <div class="policy-section">
-            <h2>14. Contact Us</h2>
+            <h2>15. Contact Us</h2>
             <p>If you have questions about these Terms, contact us at:</p>
-            <p>Candor, LLC<br>Roeland Park, KS 66205<br>Email: <a href="mailto:legal@candorfinance.app" style="color: var(--green-light); text-decoration: none;">legal@candorfinance.app</a></p>
+            <p>Candor, LLC<br>Roeland Park, KS 66205<br>Email: <a href="mailto:legal@candorfinance.app">legal@candorfinance.app</a></p>
         </div>
 
         <footer>
