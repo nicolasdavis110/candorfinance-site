@@ -3,7 +3,7 @@
         "apps": [],
         "details": [
             {
-                "appID": "TEAM_ID_HERE.com.Candor.candor",
+                "appID": "36Z9A7T75S.com.nicolasdavis.candor",
                 "paths": ["/plaid/*"]
             }
         ]
