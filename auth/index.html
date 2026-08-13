@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="no-referrer">
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="theme-color" content="#5FAF87">
+    <title>Account action — Candor</title>
+    <link rel="icon" type="image/png" href="/candor-logo.png">
+    <link rel="apple-touch-icon" href="/candor-logo.png">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; }
+
+        :root {
+            color-scheme: dark;
+            --green: #5FAF87;
+            --green-light: #8AD2AC;
+            --green-dark: #4A8F6E;
+            --bg: #0A0D11;
+            --surface: rgba(255, 255, 255, 0.055);
+            --border: rgba(255, 255, 255, 0.10);
+            --text: #F4F7FB;
+            --text-secondary: #A1AAB6;
+            --error: #F09A9A;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            padding: 32px 20px;
+            font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            color: var(--text);
+            background:
+                radial-gradient(circle at 50% 0%, rgba(95, 175, 135, 0.16), transparent 42%),
+                var(--bg);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .shell {
+            width: min(100%, 460px);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 24px;
+            color: var(--text);
+            text-decoration: none;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+        }
+
+        .brand img {
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
+        }
+
+        .card {
+            padding: 36px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: var(--surface);
+            box-shadow: 0 24px 70px rgba(0, 0, 0, 0.34);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+        }
+
+        .status-mark {
+            display: grid;
+            place-items: center;
+            width: 48px;
+            height: 48px;
+            margin: 0 auto 20px;
+            border-radius: 50%;
+            background: rgba(95, 175, 135, 0.14);
+            color: var(--green-light);
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        h1 {
+            margin: 0 0 12px;
+            text-align: center;
+            font-size: 28px;
+            line-height: 1.2;
+            letter-spacing: -0.6px;
+        }
+
+        .message {
+            margin: 0;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.65;
+        }
+
+        .message.error { color: var(--error); }
+
+        form {
+            display: grid;
+            gap: 16px;
+            margin-top: 26px;
+        }
+
+        label {
+            display: grid;
+            gap: 8px;
+            color: var(--text-secondary);
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        input {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            outline: none;
+            background: rgba(0, 0, 0, 0.22);
+            color: var(--text);
+            font: inherit;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        input:focus {
+            border-color: var(--green);
+            box-shadow: 0 0 0 3px rgba(95, 175, 135, 0.14);
+        }
+
+        .button {
+            display: inline-flex;
+            min-height: 46px;
+            align-items: center;
+            justify-content: center;
+            border: 0;
+            border-radius: 11px;
+            padding: 0 20px;
+            background: var(--green);
+            color: #fff;
+            font: inherit;
+            font-size: 15px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.2s, opacity 0.2s;
+        }
+
+        .button:hover { background: var(--green-dark); transform: translateY(-1px); }
+        .button:disabled { cursor: wait; opacity: 0.65; transform: none; }
+
+        .actions {
+            display: grid;
+            gap: 12px;
+            margin-top: 26px;
+        }
+
+        .support {
+            margin: 22px 0 0;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        .support a { color: var(--green-light); }
+
+        .hidden { display: none; }
+
+        @media (max-width: 520px) {
+            body { padding: 24px 16px; }
+            .card { padding: 28px 22px; border-radius: 16px; }
+            h1 { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+    <main class="shell">
+        <a class="brand" href="https://candorfinance.app" aria-label="Candor home">
+            <img src="/candor-logo.png" alt="">
+            <span>Candor</span>
+        </a>
+
+        <section class="card" aria-live="polite">
+            <div class="status-mark" id="status-mark">…</div>
+            <h1 id="title">Checking your link</h1>
+            <p class="message" id="message">One moment while Candor securely verifies this request.</p>
+
+            <form id="reset-form" class="hidden">
+                <label>
+                    New password
+                    <input id="password" type="password" minlength="8" autocomplete="new-password" required>
+                </label>
+                <label>
+                    Confirm new password
+                    <input id="password-confirmation" type="password" minlength="8" autocomplete="new-password" required>
+                </label>
+                <button class="button" id="reset-button" type="submit">Save new password</button>
+            </form>
+
+            <div class="actions hidden" id="actions">
+                <a class="button" href="https://candorfinance.app">Return to Candor</a>
+            </div>
+
+            <p class="support">Need help? <a href="mailto:support@candorfinance.app">support@candorfinance.app</a></p>
+        </section>
+    </main>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
+        import {
+            applyActionCode,
+            confirmPasswordReset,
+            getAuth,
+            verifyPasswordResetCode
+        } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-auth.js";
+
+        const params = new URLSearchParams(window.location.search);
+        const mode = params.get("mode");
+        const actionCode = params.get("oobCode");
+        const language = params.get("lang") || "en";
+
+        // Remove the one-time code from the visible address bar and browser
+        // history as soon as it is safely held in memory.
+        if (window.location.search) {
+            window.history.replaceState({}, document.title, "/auth/");
+        }
+
+        const title = document.getElementById("title");
+        const message = document.getElementById("message");
+        const mark = document.getElementById("status-mark");
+        const actions = document.getElementById("actions");
+        const resetForm = document.getElementById("reset-form");
+        const resetButton = document.getElementById("reset-button");
+        const password = document.getElementById("password");
+        const passwordConfirmation = document.getElementById("password-confirmation");
+
+        const auth = getAuth(initializeApp({
+            apiKey: "AIzaSyB3Y7v3VJ0IjQPKzhMItKb7dQ2SGyYJcuI"
+        }));
+        auth.languageCode = language;
+
+        function showSuccess(heading, detail) {
+            document.title = `${heading} — Candor`;
+            mark.textContent = "✓";
+            title.textContent = heading;
+            message.textContent = detail;
+            message.classList.remove("error");
+            resetForm.classList.add("hidden");
+            actions.classList.remove("hidden");
+        }
+
+        function showError(detail) {
+            document.title = "Link unavailable — Candor";
+            mark.textContent = "!";
+            title.textContent = "This link is no longer available";
+            message.textContent = detail;
+            message.classList.add("error");
+            resetForm.classList.add("hidden");
+            actions.classList.remove("hidden");
+        }
+
+        function friendlyError(error) {
+            if (error?.code === "auth/weak-password") {
+                return "Choose a stronger password with at least 8 characters.";
+            }
+            return "It may have expired or already been used. Open Candor and request a new email, or contact support if you need help.";
+        }
+
+        async function handleAction() {
+            if (!actionCode || !["verifyEmail", "resetPassword", "recoverEmail"].includes(mode)) {
+                showError("This Candor account link is incomplete. Open the newest email you received and try again.");
+                return;
+            }
+
+            try {
+                if (mode === "verifyEmail") {
+                    await applyActionCode(auth, actionCode);
+                    showSuccess("Email verified", "You’re all set. Return to the Candor app and continue signing in.");
+                    return;
+                }
+
+                if (mode === "recoverEmail") {
+                    await applyActionCode(auth, actionCode);
+                    showSuccess("Email change reversed", "Your previous email address has been restored. If you didn’t request the change, reset your password from the Candor sign-in screen.");
+                    return;
+                }
+
+                const accountEmail = await verifyPasswordResetCode(auth, actionCode);
+                document.title = "Reset password — Candor";
+                mark.textContent = "↻";
+                title.textContent = "Reset your password";
+                message.textContent = `Create a new password for ${accountEmail}.`;
+                resetForm.classList.remove("hidden");
+                password.focus();
+
+                resetForm.addEventListener("submit", async (event) => {
+                    event.preventDefault();
+                    message.classList.remove("error");
+
+                    if (password.value.length < 8) {
+                        message.textContent = "Use at least 8 characters for your new password.";
+                        message.classList.add("error");
+                        password.focus();
+                        return;
+                    }
+
+                    if (password.value !== passwordConfirmation.value) {
+                        message.textContent = "Those passwords don’t match. Please try again.";
+                        message.classList.add("error");
+                        passwordConfirmation.focus();
+                        return;
+                    }
+
+                    resetButton.disabled = true;
+                    resetButton.textContent = "Saving…";
+
+                    try {
+                        await confirmPasswordReset(auth, actionCode, password.value);
+                        password.value = "";
+                        passwordConfirmation.value = "";
+                        showSuccess("Password updated", "Your new password is ready. Return to Candor and sign in.");
+                    } catch (error) {
+                        message.textContent = friendlyError(error);
+                        message.classList.add("error");
+                        resetButton.disabled = false;
+                        resetButton.textContent = "Save new password";
+                    }
+                });
+            } catch (error) {
+                showError(friendlyError(error));
+            }
+        }
+
+        handleAction();
+    </script>
+</body>
+</html>
