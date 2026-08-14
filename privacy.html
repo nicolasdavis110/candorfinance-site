@@ -7,9 +7,6 @@
     <meta name="theme-color" content="#5FAF87">
     <link rel="icon" type="image/png" href="candor-logo.png">
     <link rel="apple-touch-icon" href="candor-logo.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -206,72 +203,94 @@
     </nav>
 
     <div class="container">
+        <!-- Legal copy version: August 14, 2026. Canonical source: CANDOR_LEGAL_COPY.md -->
         <div class="policy-header">
             <h1>Privacy Policy</h1>
-            <p class="effective">Effective April 16, 2026</p>
+            <p class="effective">Effective August 14, 2026</p>
         </div>
 
         <div class="policy-section">
-            <h2>1. Introduction</h2>
-            <p>Candor, LLC ("Candor," "we," "us," or "our") operates the Candor mobile application (the "App"). This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our App. By creating an account or using the App, you consent to the practices described in this Privacy Policy.</p>
-            <p>We reserve the right to make changes to this Privacy Policy at any time. We will alert you about any changes by updating the "Effective Date." Your continued use of the App after changes constitutes your acceptance of those changes.</p>
+            <h2>1. Scope</h2>
+            <p>Candor, LLC ("Candor," "we," "us," or "our") provides the Candor mobile application, its supporting services, and the candorfinance.app website (together, the "Services"). This Privacy Policy explains the information we collect, how we use and disclose it, and the choices available to you. It does not govern a third party's own website, application, or service.</p>
         </div>
 
         <div class="policy-section">
             <h2>2. Information We Collect</h2>
-            <p>When you create an account, we collect your email address, encrypted password, and optionally your display name and profile photo.</p>
-            <p>When you connect a bank account through Plaid or Finicity (a Mastercard company), we process transaction data (dates, amounts, merchant names, categories), account names, institution names, and account balances. This data is stored both on your device and on our secure server so your spending history is always available. Candor never receives, processes, or stores your bank login credentials. We also never receive full account numbers or routing numbers.</p>
-            <p>Data you import via CSV is processed on your device and synced to our server.</p>
+            <p><strong>Account and authentication information.</strong> We collect your email address, account identifiers, authentication provider, and optional display name. If you enable SMS multi-factor authentication, Firebase processes your phone number, verification information, and enrollment state. Firebase Authentication—not Candor's PostgreSQL database—handles passwords and other authentication credentials. Sign in with Apple may provide an Apple account identifier, email relay address, and name according to your Apple choices.</p>
+            <p><strong>Financial information and user content.</strong> When you connect an account through Plaid, we receive the financial data you authorize, which may include account and institution details, transactions, balances, investments, liabilities, and related identifiers. Plaid receives bank credentials directly; Candor does not receive or store those credentials. We also process information you enter or import, including manual and CSV transactions, account names and balances, categories, notes, rules, recurring-payment choices, debt and retirement inputs, Mindful Mode responses, preferences, and household information.</p>
+            <p><strong>Purchases and subscriptions.</strong> Apple processes payment instruments. Candor receives purchase and subscription records needed to provide and restore access, such as product and transaction identifiers, purchase and expiration dates, renewal state, and signed App Store transaction information. Candor does not receive your payment-card number.</p>
+            <p><strong>Technical, usage, and consent information.</strong> We process Firebase and Candor user IDs, a Candor-generated install identifier, app version and platform, sync and last-active timestamps, policy and age confirmations, request paths, request timing and status, IP address, user agent, bank-connection health, and security and operational events. Firebase Crashlytics and Installations may receive crash traces, installation and session identifiers, device and OS information, app version, and related diagnostics. Candor does not attach its own account ID or custom user-data fields to Crashlytics in the current app.</p>
+            <p><strong>Information that stays on the device.</strong> In the current version, an optional profile photo, biometric templates and results, transaction search terms, local notification content, and certain Mindful Mode details remain on your device. Candor stores only the Face ID or Touch ID enablement choice, not your biometric measurements. Original CSV files are read locally; financial rows created from an import can sync to Candor's server.</p>
         </div>
 
         <div class="policy-section">
-            <h2>3. How We Use Your Information</h2>
-            <p>We use your information to create and manage your account, authenticate your identity, display your spending data within the App, categorize transactions automatically, synchronize bank transactions via Plaid and Finicity, sync your data across sessions so it is never lost, send account-related communications, improve the App, detect and prevent security threats, and comply with legal obligations.</p>
+            <h2>3. How We Obtain Information</h2>
+            <p>We receive information from you, your device and use of the Services, Apple, Firebase, Plaid and connected financial institutions, a household partner, and service providers that support authentication, hosting, email, reliability, and security.</p>
         </div>
 
         <div class="policy-section">
-            <h2>4. Data Storage and Protection</h2>
-            <p>Your financial data is stored on your device using Apple's SwiftData framework, encrypted at rest by iOS Data Protection. It is also stored on our server (hosted on Railway) so your data persists across devices and is never lost. Server-side data is stored in a PostgreSQL database encrypted at rest using AES-256.</p>
-            <p>All data in transit is encrypted using TLS 1.2 or higher with certificate pinning to prevent interception. Plaid and Finicity access tokens on our server are encrypted using envelope encryption with AES-256-GCM before being stored in the database.</p>
+            <h2>4. How We Use Information</h2>
+            <p>We use information to authenticate and manage accounts; provide financial views, sync, categorization, reflections, household sharing, exports, and subscriptions; send verification, password-reset, household, and service messages; secure and troubleshoot the Services; prevent abuse; understand reliability and feature operation; comply with legal obligations; and enforce our terms. We limit connected financial data to what is reasonably necessary to provide the features you request. We do not use personal information for targeted advertising, cross-selling unrelated products or services, or sale.</p>
         </div>
 
         <div class="policy-section">
-            <h2>5. Third-Party Services</h2>
-            <p>We use Plaid and Finicity (a Mastercard company) to connect to your bank accounts and retrieve transaction data. Plaid's privacy policy is available at <a href="https://plaid.com/legal">plaid.com/legal</a>. Finicity's privacy policy is available at <a href="https://www.finicity.com/privacy/">finicity.com/privacy</a>.</p>
-            <p>We use Google Firebase for authentication and Firebase Crashlytics to collect anonymous crash reports and basic device metadata (device model, OS version, app version) to help us diagnose and fix bugs. Crash data is not linked to your identity and is not used for advertising or tracking.</p>
-            <p>We use Betterstack for server audit log retention. Logs contain request metadata (endpoints, status codes, timestamps) but never contain your financial data or credentials.</p>
-            <p>If you sign in with Apple, Apple facilitates that process under their own privacy policy.</p>
+            <h2>5. Household Sharing</h2>
+            <p>If you join a two-person household, the other member can see shared financial records and household information, including the member name and email shown in the household experience. Shared information can include transactions, categories, connected-account balances and wealth data, rules, preferences, and planning records. Certain records remain individual, including authentication credentials, the local profile photo, and the ability to reconnect or disconnect a bank connection linked by the other member.</p>
         </div>
 
         <div class="policy-section">
-            <h2>6. Data Sharing</h2>
-            <p>We do not sell, rent, lease, or trade your personal information or financial data to any third party for marketing, advertising, or any other commercial purpose. We share data only with Plaid and Finicity (for bank connectivity), Firebase (for authentication and crash reporting), and Betterstack (for server audit logs), as required by law, or with your explicit consent.</p>
+            <h2>6. Service Providers</h2>
+            <p>We use <a href="https://www.apple.com/legal/privacy/">Apple</a> for App Store purchases, StoreKit subscription reporting, Sign in with Apple, and Apple Push Notification service support.</p>
+            <p>We use <a href="https://firebase.google.com/support/privacy">Google Firebase</a> for authentication, optional SMS MFA, Crashlytics, and installation diagnostics.</p>
+            <p>We use <a href="https://plaid.com/legal/">Plaid</a> for bank connection and authorized financial data.</p>
+            <p>We use <a href="https://railway.com/legal/privacy">Railway</a> for backend hosting, PostgreSQL storage, backups, and operational logs.</p>
+            <p>We use <a href="https://betterstack.com/privacy">Better Stack</a> for centralized server and security logs.</p>
+            <p>We use <a href="https://resend.com/legal/privacy-policy">Resend</a> for verification, password-reset, and household-invitation email.</p>
+            <p>We use <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub Pages</a> for hosting the public website.</p>
+            <p>We use <a href="https://www.mastercard.com/us/en/global-privacy-notice.html">Finicity/Mastercard</a> only to identify and delete a historical connection if a legacy record remains. Candor does not offer new Finicity connections.</p>
+            <p>These providers process information under their own terms, privacy notices, and our applicable service arrangements. When a provider receives user data from Candor, we use applicable contracts and service terms to require it to use the data only for authorized services and to maintain protections consistent with this Policy and applicable law.</p>
         </div>
 
         <div class="policy-section">
-            <h2>7. Your Rights</h2>
-            <p>You can view all data within the App, export your transaction data via CSV, disconnect bank accounts at any time, and delete your account from Settings. When you delete your account, all server-side data is permanently removed. Exported CSV files are generated from your data and downloaded directly to your device. California residents have additional rights under the CCPA including the right to request disclosure and deletion of personal information. We do not sell personal information.</p>
+            <h2>7. How We Disclose Information</h2>
+            <p>We disclose information to the providers above as needed to operate, secure, and support the Services; to the other member of a household as described above; when you direct or consent to a disclosure; to comply with law or valid legal process; to protect rights, safety, and the Services; and in connection with a merger, financing, acquisition, reorganization, or sale of assets, subject to applicable law. We may use information that has been aggregated or de-identified so it no longer reasonably identifies you.</p>
+            <p>We do not disclose nonpublic personal financial information to affiliates or nonaffiliated third parties for their own marketing or for joint marketing. Disclosures to nonaffiliated service providers are limited to authorized services and other purposes permitted by law.</p>
         </div>
 
         <div class="policy-section">
-            <h2>8. Data Retention</h2>
-            <p>Transaction data is retained on our server as long as your account is active. Plaid and Finicity access tokens are deleted within 24 hours of disconnection. Server audit logs are retained for no more than 90 days. If you delete your account, all associated data — including transactions, categories, account records, and encrypted access tokens — is permanently removed within 30 days.</p>
+            <h2>8. No Sale, Advertising, Cross-App Tracking, or Online Tracking</h2>
+            <p>Candor does not sell personal information, use it for third-party advertising, or track you across apps or websites owned by other companies for advertising or advertising measurement. Candor does not collect personally identifiable information about your online activities over time and across third-party websites or online services for tracking, and we do not knowingly permit another party to do so through the Services. Because Candor does not engage in that tracking, browser Do Not Track or Global Privacy Control signals do not change how the Services behave. Service providers may collect technical information for functionality, security, and diagnostics as described in this Policy. Disclosing information to service providers so they can operate Candor is not the same as promising that information is never shared.</p>
         </div>
 
         <div class="policy-section">
-            <h2>9. Children's Privacy</h2>
-            <p>The App is not intended for use by individuals under 18. We do not knowingly collect personal information from children under 18.</p>
+            <h2>9. Storage and Security</h2>
+            <p>Candor uses measures designed to protect information, including TLS for data in transit, iOS Data Protection for the local app store, encrypted server storage, certificate or public-key pinning for the Candor API, Keychain storage for sensitive local values, and AES-256-GCM envelope encryption for Plaid access tokens. We also use access controls, rate limits, audit logging, session protections, and provider cleanup safeguards. No security measure can guarantee absolute protection.</p>
         </div>
 
         <div class="policy-section">
-            <h2>10. Security</h2>
-            <p>We implement commercially reasonable measures to protect your data, including: encryption in transit (TLS 1.2+) and at rest (AES-256), certificate pinning on all server connections, envelope encryption for third-party access tokens, biometric authentication (Face ID / Touch ID), automatic session timeouts, structured audit logging with 90-day retention, server-side rate limiting, and regular security reviews. No method of electronic storage is 100% secure, and we cannot guarantee absolute security.</p>
+            <h2>10. Retention and Deletion</h2>
+            <p>We generally retain account and financial records while your account is active or as needed to provide the Services. Some user-requested deletions are recoverable for a limited period before permanent removal. When you delete your Candor account, the active account and associated primary database records are removed, and provider deletion work for Firebase, Plaid, and any legacy Finicity record is queued and retried until confirmed or flagged for review. Deleting Candor does not cancel an App Store subscription, which must be managed through Apple.</p>
+            <p>Operational logs, security records, transactional-email records, backups, and provider-held records can remain for limited periods under configured retention schedules, legal requirements, fraud and security needs, dispute resolution, and each provider's deletion process. Records that no longer need to identify you may be retained in aggregated or de-identified form. Files you export or share are controlled by you and the destination you choose.</p>
+        </div>
+
+        <div class="policy-section" id="your-rights">
+            <h2>11. Your Choices and Privacy Rights</h2>
+            <p>You can update profile information, manage MFA, disconnect bank accounts, export available data, leave a household subject to ownership rules, and delete your account in Settings. A successful bank disconnect asks Plaid to revoke Candor's connection and stops future retrieval through that connection; information already held by Candor is handled under the retention and deletion section above. You can manage or cancel the separate App Store subscription through Apple. Depending on where you live and subject to applicable exceptions, you may have rights to request access, correction, deletion, or portability of personal information, and to appeal a denied request. Contact <a href="mailto:privacy@candorfinance.app">privacy@candorfinance.app</a>. We may need to verify your identity before completing a request.</p>
         </div>
 
         <div class="policy-section">
-            <h2>11. Contact Us</h2>
-            <p>If you have questions about this Privacy Policy, contact us at:</p>
-            <p>Candor, LLC<br>Roeland Park, KS 66205<br>Email: <a href="mailto:privacy@candorfinance.app">privacy@candorfinance.app</a></p>
+            <h2>12. Children's Privacy</h2>
+            <p>The Services are intended for people age 18 and older. We do not knowingly collect personal information from anyone under 18. Contact us if you believe a minor has provided information to Candor.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>13. Changes to This Policy</h2>
+            <p>We may update this Policy as the Services and legal requirements change. We will post the updated version and effective date and provide additional notice when required by law.</p>
+        </div>
+
+        <div class="policy-section">
+            <h2>14. Contact Us</h2>
+            <p>Candor, LLC<br>Roeland Park, KS 66205<br><a href="mailto:privacy@candorfinance.app">privacy@candorfinance.app</a></p>
         </div>
 
         <footer>
