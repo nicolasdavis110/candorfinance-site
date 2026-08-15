@@ -7,5 +7,8 @@
                 "paths": ["/plaid/*", "/invite/*"]
             }
         ]
+    },
+    "webcredentials": {
+        "apps": ["36Z9A7T75S.com.nicolasdavis.candor"]
     }
 }
