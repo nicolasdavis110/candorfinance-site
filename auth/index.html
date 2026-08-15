@@ -204,7 +204,10 @@
             </form>
 
             <div class="actions hidden" id="actions">
-                <a class="button" href="https://candorfinance.app">Return to Candor</a>
+                <!-- This token-free URL only opens the installed app. Firebase
+                     action codes remain in this page's memory and are removed
+                     from browser history before this button is revealed. -->
+                <a class="button" href="com.nicolasdavis.candor://auth/complete">Return to Candor</a>
             </div>
 
             <p class="support">Need help? <a href="mailto:support@candorfinance.app">support@candorfinance.app</a></p>
