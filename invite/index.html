@@ -6,9 +6,9 @@
     <meta name="referrer" content="no-referrer">
     <meta name="robots" content="noindex, nofollow">
     <meta name="theme-color" content="#5FAF87">
-    <title>Your Candor invitation</title>
-    <link rel="icon" type="image/png" href="/candor-logo.png">
-    <link rel="apple-touch-icon" href="/candor-logo.png">
+    <title>Your Averlen invitation</title>
+    <link rel="icon" type="image/png" href="/averlen-logo.png">
+    <link rel="apple-touch-icon" href="/averlen-logo.png">
     <style>
         *, *::before, *::after { box-sizing: border-box; }
 
@@ -159,6 +159,7 @@
 
         .support { margin: 18px 0 0; text-align: center; color: var(--text-secondary); font-size: 12px; }
         .support a { color: var(--green-light); }
+        .transition { margin: 18px 0 0; text-align: center; color: var(--text-secondary); font-size: 12px; line-height: 1.5; }
         .hidden { display: none; }
 
         @media (max-width: 520px) {
@@ -170,15 +171,15 @@
 </head>
 <body>
     <main class="shell">
-        <a class="brand" href="https://candorfinance.app" aria-label="Candor home">
-            <img src="/candor-logo.png" alt="">
-            <span>Candor</span>
+        <a class="brand" href="https://candorfinance.app" aria-label="Averlen home">
+            <img src="/averlen-logo.png" alt="">
+            <span>Averlen</span>
         </a>
 
         <section class="card" aria-live="polite">
             <div class="mark" id="mark">✓</div>
             <h1 id="title">Your invitation is ready</h1>
-            <p class="message" id="message">Candor is currently in private beta. If your partner shared TestFlight access, install Candor there first.</p>
+            <p class="message" id="message">If your partner shared TestFlight access, install the current beta first. Then return here to join your partner.</p>
 
             <div class="code-card" id="code-card">
                 <span class="code-label">Invite code</span>
@@ -186,21 +187,22 @@
             </div>
 
             <div class="actions" id="actions">
-                <a class="button hidden" id="install-button" href="#">Get Candor</a>
+                <a class="button hidden" id="install-button" href="#">Get Averlen</a>
                 <button class="button secondary" id="copy-button" type="button">Copy invite code</button>
             </div>
 
-            <p class="next-step" id="next-step">After installing Candor, return to the invitation email and tap <strong>Open your Candor invitation</strong> again. You can also enter the code during setup.</p>
-            <p class="support">Need beta access or help? <a href="mailto:support@candorfinance.app">support@candorfinance.app</a></p>
+            <p class="next-step" id="next-step">After installing the app, open the invitation link again from the email. You can also enter the code during setup.</p>
+            <p class="transition">Candor is becoming Averlen. Existing invitation links still work.</p>
+            <p class="support">Need help? <a href="mailto:support@candorfinance.app">support@candorfinance.app</a></p>
         </section>
     </main>
 
     <script>
-        // Set this to Candor's App Store product-page URL after launch, or to
+        // Set this to Averlen's App Store product-page URL after launch, or to
         // an approved external TestFlight public link during broader beta.
         // The invite email and app link never need to change.
         const installUrl = "";
-        const installLabel = "Get Candor";
+        const installLabel = "Get Averlen";
 
         const params = new URLSearchParams(window.location.search);
         const rawCode = params.get("code") || "";
@@ -232,7 +234,7 @@
         const nextStep = document.getElementById("next-step");
 
         if (!inviteCode) {
-            document.title = "Invitation unavailable — Candor";
+            document.title = "Invitation unavailable — Averlen";
             mark.textContent = "!";
             title.textContent = "This invitation link is incomplete";
             message.textContent = "Open the newest invitation email you received, or ask your partner to send a new invitation.";
@@ -247,7 +249,7 @@
                 installButton.href = installUrl;
                 installButton.textContent = installLabel;
                 installButton.classList.remove("hidden");
-                message.textContent = "Install Candor, then return to this invitation to join your partner's household.";
+                message.textContent = "Install the app, then return to this invitation to join your partner's household.";
             }
 
             copyButton.addEventListener("click", async () => {

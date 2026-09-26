@@ -6,9 +6,9 @@
     <meta name="referrer" content="no-referrer">
     <meta name="robots" content="noindex, nofollow">
     <meta name="theme-color" content="#5FAF87">
-    <title>Account action — Candor</title>
-    <link rel="icon" type="image/png" href="/candor-logo.png">
-    <link rel="apple-touch-icon" href="/candor-logo.png">
+    <title>Account action — Averlen</title>
+    <link rel="icon" type="image/png" href="/averlen-logo.png">
+    <link rel="apple-touch-icon" href="/averlen-logo.png">
     <style>
         *, *::before, *::after { box-sizing: border-box; }
 
@@ -169,6 +169,7 @@
         }
 
         .support a { color: var(--green-light); }
+        .transition { margin: 20px 0 0; text-align: center; color: var(--text-secondary); font-size: 12px; line-height: 1.5; }
 
         .hidden { display: none; }
 
@@ -181,15 +182,15 @@
 </head>
 <body>
     <main class="shell">
-        <a class="brand" href="https://candorfinance.app" aria-label="Candor home">
-            <img src="/candor-logo.png" alt="">
-            <span>Candor</span>
+        <a class="brand" href="https://candorfinance.app" aria-label="Averlen home">
+            <img src="/averlen-logo.png" alt="">
+            <span>Averlen</span>
         </a>
 
         <section class="card" aria-live="polite">
             <div class="status-mark" id="status-mark">…</div>
             <h1 id="title">Checking your link</h1>
-            <p class="message" id="message">One moment while Candor securely verifies this request.</p>
+            <p class="message" id="message">One moment while Averlen securely verifies this request.</p>
 
             <form id="reset-form" class="hidden">
                 <label>
@@ -207,9 +208,10 @@
                 <!-- This token-free URL only opens the installed app. Firebase
                      action codes remain in this page's memory and are removed
                      from browser history before this button is revealed. -->
-                <a class="button" href="com.nicolasdavis.candor://auth/complete">Return to Candor</a>
+                <a class="button" href="com.nicolasdavis.candor://auth/complete">Return to Averlen</a>
             </div>
 
+            <p class="transition">Candor is becoming Averlen. Your existing account link still works.</p>
             <p class="support">Need help? <a href="mailto:support@candorfinance.app">support@candorfinance.app</a></p>
         </section>
     </main>
@@ -249,7 +251,7 @@
         auth.languageCode = language;
 
         function showSuccess(heading, detail) {
-            document.title = `${heading} — Candor`;
+            document.title = `${heading} — Averlen`;
             mark.textContent = "✓";
             title.textContent = heading;
             message.textContent = detail;
@@ -259,7 +261,7 @@
         }
 
         function showError(detail) {
-            document.title = "Link unavailable — Candor";
+            document.title = "Link unavailable — Averlen";
             mark.textContent = "!";
             title.textContent = "This link is no longer available";
             message.textContent = detail;
@@ -272,30 +274,30 @@
             if (error?.code === "auth/weak-password") {
                 return "Choose a stronger password with at least 8 characters.";
             }
-            return "It may have expired or already been used. Open Candor and request a new email, or contact support if you need help.";
+            return "It may have expired or already been used. Open Averlen and request a new email, or contact support if you need help.";
         }
 
         async function handleAction() {
             if (!actionCode || !["verifyEmail", "resetPassword", "recoverEmail"].includes(mode)) {
-                showError("This Candor account link is incomplete. Open the newest email you received and try again.");
+                showError("This Averlen account link is incomplete. Open the newest email you received and try again.");
                 return;
             }
 
             try {
                 if (mode === "verifyEmail") {
                     await applyActionCode(auth, actionCode);
-                    showSuccess("Email verified", "You’re all set. Return to the Candor app and continue signing in.");
+                    showSuccess("Email verified", "You’re all set. Return to the Averlen app and continue signing in.");
                     return;
                 }
 
                 if (mode === "recoverEmail") {
                     await applyActionCode(auth, actionCode);
-                    showSuccess("Email change reversed", "Your previous email address has been restored. If you didn’t request the change, reset your password from the Candor sign-in screen.");
+                    showSuccess("Email change reversed", "Your previous email address has been restored. If you didn’t request the change, reset your password from the Averlen sign-in screen.");
                     return;
                 }
 
                 const accountEmail = await verifyPasswordResetCode(auth, actionCode);
-                document.title = "Reset password — Candor";
+                document.title = "Reset password — Averlen";
                 mark.textContent = "↻";
                 title.textContent = "Reset your password";
                 message.textContent = `Create a new password for ${accountEmail}.`;
@@ -327,7 +329,7 @@
                         await confirmPasswordReset(auth, actionCode, password.value);
                         password.value = "";
                         passwordConfirmation.value = "";
-                        showSuccess("Password updated", "Your new password is ready. Return to Candor and sign in.");
+                        showSuccess("Password updated", "Your new password is ready. Return to Averlen and sign in.");
                     } catch (error) {
                         message.textContent = friendlyError(error);
                         message.classList.add("error");
